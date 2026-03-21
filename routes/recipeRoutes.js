@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const recipeController = require("../controllers/recipeController");
 
+<<<<<<< HEAD
 // CREATE
 router.post("/postrecipe", recipeController.createRecipe);
 
@@ -18,3 +19,12 @@ router.put("/updaterecipe/:id", recipeController.updateRecipe);
 router.delete("/deleterecipe/:id", recipeController.deleteRecipe);
 
 module.exports = router;
+=======
+router.post("/", recipeController.createRecipe);
+router.get("/", recipeController.getAllRecipes);
+router.get("/:id", recipeController.getRecipeById);
+router.put("/:id", recipeController.updateRecipe);
+router.delete("/:id", recipeController.deleteRecipe);
+
+module.exports = router;
+>>>>>>> acce11032fdc7d73bba68a59838206d067433e63
