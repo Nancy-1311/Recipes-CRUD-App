@@ -1,3 +1,5 @@
+require("dotenv").config(); // ✅ ADD THIS LINE
+
 const express = require("express");
 const connectDB = require("./config/db");
 const recipeRoutes = require("./routes/recipeRoutes");
@@ -8,7 +10,7 @@ app.use(express.json());
 
 connectDB();
 
-app.use("/api", recipeRoutes);
+app.use("/api/recipe", recipeRoutes);
 
 const PORT = 5000;
 

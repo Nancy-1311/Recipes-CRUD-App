@@ -40,6 +40,10 @@ exports.updateRecipe = async (req, res) => {
       { new: true }
     );
 
+    if (!recipe) {
+      return res.status(404).json({ message: "Recipe not found" });
+    }
+
     res.json(recipe);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -48,7 +52,12 @@ exports.updateRecipe = async (req, res) => {
 
 exports.deleteRecipe = async (req, res) => {
   try {
-    await Recipe.findByIdAndDelete(req.params.id);
+    const recipe = await Recipe.findByIdAndDelete(req.params.id);
+
+    if (!recipe) {
+      return res.status(404).json({ message: "Recipe not found" });
+    }
+
     res.json({ message: "Recipe deleted successfully" });
   } catch (error) {
     res.status(500).json({ message: error.message });

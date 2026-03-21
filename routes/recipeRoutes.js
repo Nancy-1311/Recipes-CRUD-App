@@ -2,14 +2,19 @@ const express = require("express");
 const router = express.Router();
 const recipeController = require("../controllers/recipeController");
 
-router.post("/recipes", recipeController.createRecipe);
+// CREATE
+router.post("/postrecipe", recipeController.createRecipe);
 
-router.get("/recipes", recipeController.getAllRecipes);
+// READ ALL
+router.get("/getrecipe", recipeController.getAllRecipes);
 
-router.get("/recipes/:id", recipeController.getRecipeById);
+// READ BY ID ✅ FIXED
+router.get("/getrecipebyid/:id", recipeController.getRecipeById);
 
-router.put("/recipes/:id", recipeController.updateRecipe);
+// UPDATE ✅ FIXED
+router.put("/updaterecipe/:id", recipeController.updateRecipe);
 
-router.delete("/recipes/:id", recipeController.deleteRecipe);
+// DELETE ✅ FIXED
+router.delete("/deleterecipe/:id", recipeController.deleteRecipe);
 
 module.exports = router;
