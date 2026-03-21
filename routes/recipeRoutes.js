@@ -8,13 +8,13 @@ router.post("/postrecipe", recipeController.createRecipe);
 // READ ALL
 router.get("/getrecipe", recipeController.getAllRecipes);
 
-// READ BY ID ✅ FIXED
+// READ BY ID
 router.get("/getrecipebyid/:id", recipeController.getRecipeById);
 
-// UPDATE ✅ FIXED
+// UPDATE 
 router.put("/updaterecipe/:id", recipeController.updateRecipe);
 
-// DELETE ✅ FIXED
+// DELETE 
 router.delete("/deleterecipe/:id", recipeController.deleteRecipe);
 
 module.exports = router;
